@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/titulo"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:layout_marginTop="36dp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text=""
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imagen"
+                android:layout_width="312dp"
+                android:layout_height="163dp"
+                android:layout_gravity="center"
+                android:adjustViewBounds="false" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="13dp" />
+
+            <LinearLayout
+                android:id="@+id/cond"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="41dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:text="Concejo:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/concejo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="9"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/zon"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="41dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:text="Zona:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/zona"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="9"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dis"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="41dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:text="Distancia:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/distancia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="9"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dist"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="41dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:text="Dificultad:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dificultad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="9"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/TiempoAPie"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="41dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="4"
+                    android:text="Tiempo a pie:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="8"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/codig"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView34"
+                    android:layout_width="wrap_content"
+                    android:layout_height="41dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:text="Código:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/codigo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="9"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tdr"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="41dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:text="Tipo de recorrido:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/TipoDeRecorrido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="9"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/itn"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:baselineAligned="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:text="Itinerario:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/itinerario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="9"
+                    android:text=""
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tdruta"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="41dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:text="TipoRuta:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tiporuta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="9"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contexto"
+                android:layout_width="fill_parent"
+                android:layout_height="68dp"
+                android:baselineAligned="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="68dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="4"
+                    android:text="Comentario de contacto:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/ContactoTexto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="9"
+                    android:text=""
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/OrgDest"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="41dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="4"
+                    android:text="Origen destino:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/OrigenDestino"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="9"
+                    android:text="" />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/distanciatramo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="41dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="4"
+                    android:fontFamily="serif"
+                    android:text="Distancia tramo:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/DistanciaTramo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="serif"
+                    android:layout_gravity="center"
+                    android:layout_weight="9"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rsm"
+                android:layout_width="fill_parent"
+                android:layout_height="56dp"
+                android:baselineAligned="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView40"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:fontFamily="serif"
+                    android:text="Resumen:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/resumen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="53dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="9"
+                    android:fontFamily="serif"
+                    android:text=""
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/textView99"
+                android:layout_width="177dp"
+                android:layout_height="41dp"
+                android:layout_gravity="center"
+                android:fontFamily="serif"
+                android:text="Descripción"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/descripcion"
+                android:layout_width="match_parent"
+                android:layout_height="368dp"
+                android:fontFamily="serif"
+                android:scrollbars="vertical"
+                app:autoSizeTextType="uniform" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>
