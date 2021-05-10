@@ -23,8 +23,8 @@ android:padding="16dp"
 
             <TextView
                 android:id="@+id/nombre"
-                android:layout_width="300dp"
-                android:layout_height="35dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:autoSizeTextType="uniform"
                 android:textSize="18sp" />
@@ -38,12 +38,6 @@ android:padding="16dp"
                 android:textSize="14sp" />
 
         </LinearLayout>
-
-        <Button
-            android:layout_width="58dp"
-            android:layout_height="59dp"
-            android:drawableLeft="@drawable/button_icon"
-            android:text="@string/button_text" />
 
     </LinearLayout>
 

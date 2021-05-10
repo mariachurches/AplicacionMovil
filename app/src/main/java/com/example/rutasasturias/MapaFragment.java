@@ -49,8 +49,6 @@ public class MapaFragment  extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
      * @return A new instance of fragment MapaFragment.
      */
     // TODO: Rename and change types and number of parameters
@@ -105,11 +103,11 @@ public class MapaFragment  extends Fragment {
                         }
                     }
 
-                    LatLng coorAsturias = new LatLng(43.215983, (-05.514003));
+                    LatLng coorAsturias = new LatLng(43.215983, (-05.834003));
 
 
                     // For zooming automatically to the location of the marker
-                    CameraPosition cameraPosition = new CameraPosition.Builder().target(coorAsturias).zoom(6).build();
+                    CameraPosition cameraPosition = new CameraPosition.Builder().target(coorAsturias).zoom(7).build();
                     googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                 }
             }

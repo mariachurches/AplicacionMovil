@@ -31,6 +31,7 @@ public class DetailFragment extends Fragment {
     private RutasAsturiasViewModel viewModel;
     private View view;
     private ImageView imageView;
+    private ImageView fav;
     private TextView titulo;
     private TextView concejo;
     private TextView descripcion;
@@ -51,6 +52,7 @@ public class DetailFragment extends Fragment {
     private int n_foto=0;
     private int n_foto_max=0;
     private String [] imagenes;
+    private boolean is_fav;
 
 
 
@@ -95,6 +97,7 @@ public class DetailFragment extends Fragment {
 
         viewModel = new ViewModelProvider(this).get(RutasAsturiasViewModel.class);
         getItems();
+        is_fav = false; //Mirar si esta en la lista de favoritos
 
         final Observer<ArrayList<RutasAsturias>> observer = new Observer<ArrayList<RutasAsturias>>() {
             @Override
@@ -125,7 +128,16 @@ public class DetailFragment extends Fragment {
                 new LoadImage(imageView).execute(url);
             }
         });
+
         viewModel.getRutas().observe(getViewLifecycleOwner(), observer);
+
+        fav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                is_fav = !is_fav;
+                putImageFav();
+            }
+        });
         return view;
     }
 
@@ -147,11 +159,25 @@ public class DetailFragment extends Fragment {
         tiporuta = view.findViewById(R.id.tiporuta);
         origenDestino = view.findViewById(R.id.OrigenDestino);
         distanciatramo = view.findViewById(R.id.DistanciaTramo);
+        fav = view.findViewById(R.id.imagenFav);
 
+    }
+
+    private void putImageFav()
+    {
+        if(is_fav)
+        {
+            fav.setImageResource(R.drawable.button_icon);
+        }
+        else
+        {
+            fav.setImageResource(R.drawable.estrella1);
+        }
     }
     private void putText()
     {
-        titulo.setText(Mi_ruta.getNombre());
+        putImageFav();
+        titulo.setText(" "+Mi_ruta.getNombre());
         concejo.setText(Mi_ruta.getConcejos());
         zona.setText(Mi_ruta.getZona());
         distancia.setText(Mi_ruta.getDistancia());
