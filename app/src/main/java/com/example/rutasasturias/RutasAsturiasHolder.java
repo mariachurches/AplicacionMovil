@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class RutasAsturiasHolder extends RecyclerView.ViewHolder implements View.OnClickListener, AdapterView.OnItemSelectedListener
 {
     private TextView name;
+    private TextView concejo;
     public CardView card;
 
 
@@ -21,6 +22,7 @@ public class RutasAsturiasHolder extends RecyclerView.ViewHolder implements View
         super(view);
         Log.d("Holder", "se creo");
         name = (TextView) itemView.findViewById(R.id.nombre);
+        concejo = (TextView) itemView.findViewById(R.id.Concejo);
         card = (CardView) itemView.findViewById(R.id.cv);
     }
 
@@ -28,13 +30,9 @@ public class RutasAsturiasHolder extends RecyclerView.ViewHolder implements View
     {
         if(ruta !=null)
         {
-            Log.d("Holder", "bind nombre" + ruta.getNombre());
             name.setText(ruta.getNombre());
+            concejo.setText(ruta.getConcejos());
         }
-        else
-            {
-                Log.d("Holder", "bind null");
-            }
     }
 
     @Override

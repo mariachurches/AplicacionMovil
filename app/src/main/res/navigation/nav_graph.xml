@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_hostFragment_to_lista32"
             app:destination="@id/lista3" />
+        <action
+            android:id="@+id/action_hostFragment_to_mapaFragment"
+            app:destination="@id/mapaFragment" />
     </fragment>
     <fragment
         android:id="@+id/lista3"
@@ -28,4 +31,9 @@
         android:name="com.example.rutasasturias.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" />
+    <fragment
+        android:id="@+id/mapaFragment"
+        android:name="com.example.rutasasturias.MapaFragment"
+        android:label="fragment_mapa"
+        tools:layout="@layout/fragment_mapa" />
 </navigation>

@@ -40,16 +40,6 @@ public class RutasListFragment extends Fragment implements Spinner.OnItemSelecte
     private View view;
     private Spinner spinner;
 
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
     public RutasListFragment() {
         // Required empty public constructor
     }
@@ -58,16 +48,13 @@ public class RutasListFragment extends Fragment implements Spinner.OnItemSelecte
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
      * @return A new instance of fragment RutasListFragment.
      */
     // TODO: Rename and change types and number of parameters
     public static RutasListFragment newInstance(String param1, String param2) {
         RutasListFragment fragment = new RutasListFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+
         fragment.setArguments(args);
         return fragment;
     }
@@ -76,8 +63,7 @@ public class RutasListFragment extends Fragment implements Spinner.OnItemSelecte
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
     }
 
@@ -88,9 +74,8 @@ public class RutasListFragment extends Fragment implements Spinner.OnItemSelecte
         view = inflater.inflate(R.layout.fragment_lista, container, false);
 
         spinner = (Spinner) view.findViewById(R.id.spinner2);
-        Log.d("FRAGMENT ","nombre " + getResources().getStringArray(R.array.filtros)[0]);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity().getApplicationContext(),android.R.layout.simple_spinner_item,getResources().getStringArray(R.array.filtros));
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        arrayAdapter.setDropDownViewResource(R.layout.spinner_down);
         spinner.setAdapter(arrayAdapter);
 
         viewModel = new ViewModelProvider(this).get(RutasAsturiasViewModel.class);
@@ -100,7 +85,6 @@ public class RutasListFragment extends Fragment implements Spinner.OnItemSelecte
             @Override
             public void onChanged(@Nullable final ArrayList<RutasAsturias> ruta)
             {
-                Log.d("DATACHANGE", "que tal estamos");
                 adaptee = new RutasAsturiasListAdapter(viewModel.getRutas().getValue());
                 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
                 recyclerView.setAdapter(adaptee);

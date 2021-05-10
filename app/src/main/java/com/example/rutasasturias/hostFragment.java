@@ -17,14 +17,6 @@ import android.widget.Button;
  */
 public class hostFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public hostFragment() {
         // Required empty public constructor
@@ -42,8 +34,6 @@ public class hostFragment extends Fragment {
     public static hostFragment newInstance(String param1, String param2) {
         hostFragment fragment = new hostFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -51,9 +41,8 @@ public class hostFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+        if (getArguments() != null)
+        {
         }
     }
 
@@ -67,7 +56,7 @@ public class hostFragment extends Fragment {
         button1 = (Button) v.findViewById(R.id.lista);
         button2 = (Button) v.findViewById(R.id.mapa);
         button1.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_hostFragment_to_lista32));
-        //button2.setOnClickListener(this);
+        button2.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_hostFragment_to_mapaFragment));
 
         return v;
 

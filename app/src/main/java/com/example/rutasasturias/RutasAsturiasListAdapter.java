@@ -19,7 +19,6 @@ public class RutasAsturiasListAdapter extends RecyclerView.Adapter <RutasAsturia
 
     public RutasAsturiasListAdapter(ArrayList<RutasAsturias> value)
     {
-        Log.d("ADAPTEEEEEER", "value = "+ value.size());
         rutasAsturias = new ArrayList<>();
         rutasAsturias=value;
 
@@ -38,7 +37,6 @@ public class RutasAsturiasListAdapter extends RecyclerView.Adapter <RutasAsturia
     {
         holder.card.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
-            Log.d("ADAPTER","jeje" + rutasAsturias.get(position).getNombre());
             bundle.putInt(DetailFragment.N_RUTA, position);
             Navigation.findNavController(v).navigate(R.id.action_lista3_to_detailFragment,bundle);
 
@@ -51,7 +49,6 @@ public class RutasAsturiasListAdapter extends RecyclerView.Adapter <RutasAsturia
         }
         else
         {
-            Log.d("Holer","no null" + rutasAsturias.size());
             holder.bind(rutasAsturias.get(position));
         }
     }
@@ -60,7 +57,6 @@ public class RutasAsturiasListAdapter extends RecyclerView.Adapter <RutasAsturia
     public int getItemCount() {
         if(rutasAsturias != null)
         {
-            Log.d("EYYYYYYYYYYYYYDCOUT","tamaño vectpr" + rutasAsturias.size());
             return rutasAsturias.size();
         }
         return 1;

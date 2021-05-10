@@ -1,2 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Rutas de Asturias</string>
+    <string name="Concejo">Concejo:</string>
+    <string name="Zona">Zona:</string>
+    <string name="Distancia">Distancia:</string>
+    <string name="Dificultad">Dificultad</string>
+    <string name="Tiempoapie">Tiempo a pie:</string>
+    <string name="Localizacion">Localización:</string>
+    <string name="Codigo">Código:</string>
+    <string name="TipoDeRecorrido">Tipo de recorrido:</string>
+    <string name="Itinerario">Itinerario:</string>
+    <string name="TipoRuta">Tipo de ruta:</string>
+    <string name="Comentario">Comentario del contacto:</string>
+    <string name="OrigenDest">Origen - destino:</string>
+    <string name="DistanciaTramo">Favorito</string>
+    <string name="Resumen">Favorito</string>
+    <string name="Descripcion">Favorito</string>
+    <string name="button_text">Favorito</string>
+    <string name="tipo">Tipo</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>

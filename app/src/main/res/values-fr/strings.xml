@@ -1,9 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">RutasAsturias</string>
-    <string name="tituloLista">Lista de animales:</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="localizacion">Emplacement</string>
+    <string name="app_name">Routes des Asturias</string>
     <string name="tipo">Type</string>
+    <string name="Concejo">Conseil:</string>
+    <string name="Zona">Zone:</string>
+    <string name="Distancia">Distance:</string>
+    <string name="Dificultad">Difficulté:</string>
+    <string name="Tiempoapie">Temps de marche:</string>
+    <string name="Localizacion">Emplacement</string>
+    <string name="Codigo">Code:</string>
+    <string name="TipoDeRecorrido">Type de tour:</string>
+    <string name="Itinerario">Itinéraire:</string>
+    <string name="TipoRuta">Type d\'itinéraire:</string>
+    <string name="Comentario">Commentaire de contact:</string>
+    <string name="OrigenDest">Origene - destination:</string>
+    <string name="DistanciaTramo">Distance de section:</string>
+    <string name="Resumen">Résumé:</string>
+    <string name="Descripcion">La description:</string>
+    <string name="button_text">Favori</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </resources>

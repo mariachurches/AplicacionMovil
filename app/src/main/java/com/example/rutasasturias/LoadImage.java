@@ -62,7 +62,7 @@ class LoadImage extends AsyncTask<String, Void, Bitmap> {
             }
         } catch (Exception e) {
             urlConnection.disconnect();
-            Log.e("LoadImage class", "Descargando imagen desde url: " + url);
+            Log.e("LoadImage class", "Se esta descargando la imagen: " + url);
         } finally {
             if (urlConnection != null) {
                 urlConnection.disconnect();
