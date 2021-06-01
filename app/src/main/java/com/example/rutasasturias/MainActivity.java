@@ -20,16 +20,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         SharedPreferences preferencias = getSharedPreferences("favoritos",Context.MODE_PRIVATE);
-
-
-        String online = isOnline() ? "SI" : "NO";
-        Toast.makeText(getApplicationContext(), "Online: ".concat(online), Toast.LENGTH_LONG).show();
-        Log.d("MainActivity","Online: ".concat(online) );
+        Toast.makeText(getApplicationContext(), "Bienvenido a la aplicacion de rutas de asturias ", Toast.LENGTH_LONG).show();
     }
 
-    boolean isOnline() {
-        ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-        return (networkInfo != null && networkInfo.isConnected());
-    }
+
 }

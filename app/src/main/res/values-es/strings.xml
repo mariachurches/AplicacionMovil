@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Rutas de Asturias</string>
+    <string name="Nombre">Nombre:</string>
     <string name="Concejo">Concejo:</string>
     <string name="Zona">Zona:</string>
     <string name="Distancia">Distancia:</string>
@@ -14,21 +15,16 @@
     <string name="Comentario">Comentario del contacto:</string>
     <string name="OrigenDest">Origen - destino:</string>
     <string name="DistanciaTramo">Favorito</string>
-    <string name="Resumen">Favorito</string>
+    <string name="Resumen">Resumen</string>
     <string name="Descripcion">Favorito</string>
-    <string name="button_text">Favorito</string>
     <string name="tipo">Tipo</string>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <string name="Spinner1">Todas las rutas</string>
+    <string name="Spinner2">Mis rutas favoritas</string>
+    <string name="Cancelar">Cancelar</string>
+    <string name="Buscar">Buscar</string>
+    <string name="Filtrar">Filtrar</string>
+    <string name="Ida">Ida</string>
+    <string name="IdaV">Ida y vuelta</string>
+    <string name="Guardar">Guardar</string>
+    <string name="Volver">Volver</string>
 </resources>

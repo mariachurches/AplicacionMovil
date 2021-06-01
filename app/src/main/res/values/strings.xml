@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">RutasAsturias</string>
+    <string name="Nombre">Nombre</string>
     <string name="tipo">Tipo</string>
     <string name="Localizacion">Localización</string>
     <string name="Concejo">Concejo</string>
@@ -13,8 +14,32 @@
     <string name="TipoRuta">Tipo de ruta:</string>
     <string name="Comentario">Comentario del contacto:</string>
     <string name="OrigenDest">Origen - destino:</string>
-    <string name="DistanciaTramo">Favorito</string>
-    <string name="Resumen">Favorito</string>
-    <string name="Descripcion">Favorito</string>
-    <string name="button_text">Favorito</string>
+    <string name="DistanciaTramo">Distancia de tramo:</string>
+    <string name="Resumen">Resumen:</string>
+    <string name="Descripcion">Descripción:</string>
+    <string name="Spinner1">Todas las rutas</string>
+    <string name="Spinner2">Mis rutas favoritas</string>
+    <string name="Cancelar">Cancelar</string>
+    <string name="Buscar">Buscar</string>
+    <string name="Filtrar">Filtrar</string>
+    <string name="Guardar">Guardar</string>
+    <string name="Ida">Ida</string>
+    <string name="IdaV">Ida y vuelta</string>
+    <string name="Volver">Volver</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="title_activity_settings">SettingsActivity</string>
 </resources>

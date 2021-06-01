@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Routes des Asturias</string>
-    <string name="tipo">Type</string>
+    <string name="Nombre">Nom:</string>
+    <string name="tipo">Type:</string>
     <string name="Concejo">Conseil:</string>
     <string name="Zona">Zone:</string>
     <string name="Distancia">Distance:</string>
@@ -17,20 +18,13 @@
     <string name="DistanciaTramo">Distance de section:</string>
     <string name="Resumen">Résumé:</string>
     <string name="Descripcion">La description:</string>
-    <string name="button_text">Favori</string>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <string name="Spinner1">Tous les itinéraires</string>
+    <string name="Spinner2">Mes itinéraires préférés</string>
+    <string name="Cancelar">Annuler</string>
+    <string name="Buscar">Chercher</string>
+    <string name="Filtrar">Filtre</string>
+    <string name="Ida">En allant</string>
+    <string name="IdaV">aller-retour</string>
+    <string name="Guardar">Guarde</string>
+    <string name="Volver">Volv</string>
 </resources>

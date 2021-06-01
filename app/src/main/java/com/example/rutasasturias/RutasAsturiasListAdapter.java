@@ -21,8 +21,6 @@ public class RutasAsturiasListAdapter extends RecyclerView.Adapter <RutasAsturia
     {
         rutasAsturias = new ArrayList<>();
         rutasAsturias=value;
-
-
     }
 
     @NonNull
@@ -37,20 +35,12 @@ public class RutasAsturiasListAdapter extends RecyclerView.Adapter <RutasAsturia
     {
         holder.card.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
-            bundle.putInt(DetailFragment.N_RUTA, position);
+            bundle.putString(DetailFragment.N_RUTA, rutasAsturias.get(position).getNombre());
             Navigation.findNavController(v).navigate(R.id.action_lista3_to_detailFragment,bundle);
 
         });
-
-        if(rutasAsturias == null)
-        {
-            Log.d("Holer","null");
-            holder.bind(null);
-        }
-        else
-        {
-            holder.bind(rutasAsturias.get(position));
-        }
+        if(rutasAsturias == null) holder.bind(null);
+        else holder.bind(rutasAsturias.get(position));
     }
 
     @Override

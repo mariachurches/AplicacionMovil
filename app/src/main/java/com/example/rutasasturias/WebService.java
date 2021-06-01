@@ -59,7 +59,6 @@ public class WebService {
                     Log.d("WEBSERVICE", "aqui tamos de sizeeeeeeeeeeeeeeeeeeee " + o.toString());
                     Log.d("WEBSERVICE", "aqui tamos de sizeeeeeeeeeeeeeeeeeeee " + o.getNombre());
                     rutas.add(o);
-
                 }
                 RutasAsturiasMutableLiveData.setValue(rutas);
             }

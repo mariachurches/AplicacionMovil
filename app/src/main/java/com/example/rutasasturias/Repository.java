@@ -3,19 +3,31 @@ package com.example.rutasasturias;
 import android.content.Context;
 import android.util.Log;
 
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.example.rutasasturias.AsymcClasses.allRutaAsync;
+import com.example.rutasasturias.AsymcClasses.deleteAllAsync;
+import com.example.rutasasturias.AsymcClasses.deleteRutaAsync;
+import com.example.rutasasturias.AsymcClasses.insertRutaAsync;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class Repository {
 
     private WebService webService;
     private MutableLiveData<ArrayList<RutasAsturias>> RutasAsturiasMutableLiveData;
+    private RutasAsturiasFavDAO favsDAO;
+    private List<Ruta> rutasfavs;
 
     public Repository(Context c)
     {
-        RutasAsturiasMutableLiveData = new MutableLiveData<ArrayList<RutasAsturias>>();
+        if(RutasAsturiasMutableLiveData == null)
+        {
+            Log.d("contsMaria","null");
+            RutasAsturiasMutableLiveData = new MutableLiveData<ArrayList<RutasAsturias>>();
+        }
+        favsDAO = RoomDatabaseAsturias.getDatabase(c).rutasDAO();
         this.webService = new WebService(c);
     }
 
@@ -28,16 +40,43 @@ public class Repository {
     {
         if(RutasAsturiasMutableLiveData.getValue() == null)
         {
-            Log.d("REPOOSITORYYY", "era nulllllll");
             RutasAsturiasMutableLiveData = new MutableLiveData<ArrayList<RutasAsturias>>();
             this.RutasAsturiasMutableLiveData = this.webService.getRutasAsturias();
         }
         else
         {
-            Log.d("REPOOSITORYYY", "noooooooo era nulllllll" + RutasAsturiasMutableLiveData.getValue().size());
-
         }
         return this.RutasAsturiasMutableLiveData;
+    }
+
+    public void meterRutaEnFavoritos(Ruta ruta)
+    {
+        new insertRutaAsync(favsDAO).execute(ruta);
+    }
+    public void borrarRutadeFavoritos(Ruta ruta)
+    {
+        new deleteRutaAsync(favsDAO).execute(ruta);
+    }
+    public void rutasFavoritos()
+    {
+        new allRutaAsync(favsDAO, this).execute();
+    }
+    public void setRutasFav(List<Ruta> result)
+    {
+        rutasfavs = result;
+    }
+    public void deleleteAll()
+    {
+        new deleteAllAsync(favsDAO).execute();
+    }
+
+    public List<Ruta> getRutasFav()
+    {
+        if(rutasfavs == null)
+        {
+            rutasFavoritos();
+        }
+        return rutasfavs;
     }
 
 }

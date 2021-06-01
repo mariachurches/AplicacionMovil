@@ -46,12 +46,14 @@ public class Ruta {
     private String Folleto;
     private String Tramos;
     private String OrigenDestino;
-    private int DistanciaTramo;
+    private String DistanciaTramo;
     private String DescripcionTramo;
     private String Geolocalizacion;
     private String Coordenadas;
 
-    public Ruta(String nombre, String contacto, String concejos, String zona, double distancia, int dificultad, String tiempoAPie, String tiempoBTT, String tiempoCoche, String tiempoViasVerdes, String tiempoAscension, String contactoTexto, String codigo, String tipoDeRecorrido, String altitud, String desnivel, String situacionGeografica, String puntoDePartida, String informacion, String resumen, String informacionTexto, String observaciones, String itinerario, String textoTramos, String detalle, String detalleImagen, String detalleTexto, String visualizador, String slide, String slideTitulo, String slideUrl, String trazadoRuta, String trazadoRutaGPX, String tipoRuta, String folletos, String folleto, String tramos, String origenDestino, int distanciaTramo, String descripcionTramo, String geolocalizacion, String coordenadas) {
+    public Ruta(){}
+
+    public Ruta(String nombre, String contacto, String concejos, String zona, double distancia, int dificultad, String tiempoAPie, String tiempoBTT, String tiempoCoche, String tiempoViasVerdes, String tiempoAscension, String contactoTexto, String codigo, String tipoDeRecorrido, String altitud, String desnivel, String situacionGeografica, String puntoDePartida, String informacion, String resumen, String informacionTexto, String observaciones, String itinerario, String textoTramos, String detalle, String detalleImagen, String detalleTexto, String visualizador, String slide, String slideTitulo, String slideUrl, String trazadoRuta, String trazadoRutaGPX, String tipoRuta, String folletos, String folleto, String tramos, String origenDestino, String distanciaTramo, String descripcionTramo, String geolocalizacion, String coordenadas) {
         Nombre = nombre;
         Contacto = contacto;
         Concejos = concejos;
@@ -135,7 +137,7 @@ public class Ruta {
     public String getFolleto() { return Folleto; }
     public String getTramos() { return Tramos; }
     public String getOrigenDestino() { return OrigenDestino; }
-    public int getDistanciaTramo() { return DistanciaTramo; }
+    public String getDistanciaTramo() { return DistanciaTramo; }
     public String getDescripcionTramo() { return DescripcionTramo; }
     public String getGeolocalizacion() { return Geolocalizacion; }
     public String getCoordenadas() { return Coordenadas;}
@@ -179,7 +181,7 @@ public class Ruta {
     public void setFolleto(String folleto) { Folleto = folleto; }
     public void setTramos(String tramos) { Tramos = tramos; }
     public void setOrigenDestino(String origenDestino) { OrigenDestino = origenDestino; }
-    public void setDistanciaTramo(int distanciaTramo) { DistanciaTramo = distanciaTramo; }
+    public void setDistanciaTramo(String distanciaTramo) { DistanciaTramo = distanciaTramo; }
     public void setDescripcionTramo(String descripcionTramo) { DescripcionTramo = descripcionTramo; }
     public void setGeolocalizacion(String geolocalizacion) { Geolocalizacion = geolocalizacion; }
     public void setCoordenadas(String coordenadas) { Coordenadas = coordenadas; }

@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.BoringLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,7 +26,7 @@ import java.util.ArrayList;
 public class DetailFragment extends Fragment {
 
     public static final String N_RUTA = "n_ruta";
-    private static int seleccionada;
+    private static String seleccionada;
     private RecyclerView recyclerView;
     private RutasAsturiasListAdapter adaptee;
     private RutasAsturiasViewModel viewModel;
@@ -53,10 +54,10 @@ public class DetailFragment extends Fragment {
     private int n_foto_max=0;
     private String [] imagenes;
     private boolean is_fav;
-
-
-
-
+    private ArrayList<RutasAsturias> rutas;
+    private Repository repository;
+    private Ruta r;
+    private boolean iniciada;
 
     public DetailFragment() {
         // Required empty public constructor
@@ -74,7 +75,7 @@ public class DetailFragment extends Fragment {
     public static DetailFragment newInstance(String param1, String param2) {
         DetailFragment fragment = new DetailFragment();
         Bundle args = new Bundle();
-        args.putInt(N_RUTA, seleccionada);
+        args.putString(N_RUTA, seleccionada);
         fragment.setArguments(args);
         return fragment;
     }
@@ -83,9 +84,8 @@ public class DetailFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            seleccionada = getArguments().getInt(N_RUTA);
+            seleccionada = getArguments().getString(N_RUTA);
         }
-
     }
 
     @Override
@@ -94,6 +94,7 @@ public class DetailFragment extends Fragment {
 
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_detail, container, false);
+        repository = new Repository(getActivity().getApplicationContext());
 
         viewModel = new ViewModelProvider(this).get(RutasAsturiasViewModel.class);
         getItems();
@@ -103,17 +104,16 @@ public class DetailFragment extends Fragment {
             @Override
             public void onChanged(@Nullable final ArrayList<RutasAsturias> ruta)
             {
-                Mi_ruta = viewModel.getRuta(seleccionada);
+                rutas = viewModel.getRutas().getValue();
+                Mi_ruta = getRuta(seleccionada);
                 putText();
                 n_foto_max=Mi_ruta.getSlide().split(",").length;
-                Log.d("URL","Foto maxima " + n_foto_max);
+
                 imagenes =Mi_ruta.getSlide().split(",");
                 url = "https://www.turismoasturias.es" + imagenes[0];
-                Log.d("URL", url);
                 new LoadImage(imageView).execute(url);
                 adaptee = new RutasAsturiasListAdapter(viewModel.getRutas().getValue());
-                viewModel.updateRutasAsturias();
-
+                //viewModel.updateRutasAsturias();
             }
         };
 
@@ -122,9 +122,7 @@ public class DetailFragment extends Fragment {
             public void onClick(View v) {
                 n_foto++;
                 n_foto = (n_foto >= n_foto_max)?0:n_foto;
-                Log.d("URL", "n_fotoooo" + n_foto);
                 url = "https://www.turismoasturias.es" + imagenes[n_foto];
-                Log.d("URL", url);
                 new LoadImage(imageView).execute(url);
             }
         });
@@ -136,6 +134,9 @@ public class DetailFragment extends Fragment {
             public void onClick(View v) {
                 is_fav = !is_fav;
                 putImageFav();
+                rellenarRuta();
+                if(is_fav) repository.meterRutaEnFavoritos(r);
+                else repository.borrarRutadeFavoritos(r);
             }
         });
         return view;
@@ -165,14 +166,8 @@ public class DetailFragment extends Fragment {
 
     private void putImageFav()
     {
-        if(is_fav)
-        {
-            fav.setImageResource(R.drawable.button_icon);
-        }
-        else
-        {
-            fav.setImageResource(R.drawable.estrella1);
-        }
+        if(is_fav) fav.setImageResource(R.drawable.button_icon);
+        else fav.setImageResource(R.drawable.estrella1);
     }
     private void putText()
     {
@@ -192,5 +187,52 @@ public class DetailFragment extends Fragment {
         tiporuta.setText(Mi_ruta.getTipoRuta());
         origenDestino.setText(Mi_ruta.getOrigenDestino());
         distanciatramo.setText(Mi_ruta.getDistanciaTramo());
+    }
+
+    private RutasAsturias getRuta(String nombre)
+    {
+        for(int i=0; i< rutas.size(); i++)
+        {
+            if(rutas.get(i).getNombre().equals(nombre)) return rutas.get(i);
+        }
+        return rutas.get(0);
+    }
+
+    private void rellenarRuta()
+    {
+        r = new Ruta();
+        r.setAltitud(Mi_ruta.getAltitud());
+        r.setCodigo(Mi_ruta.getCodigo());
+        r.setConcejos(Mi_ruta.getConcejos());
+        r.setContacto(Mi_ruta.getContacto());
+        r.setContactoTexto(Mi_ruta.getContactoTexto());
+        r.setDescripcionTramo(Mi_ruta.getDescripcionTramo());
+        r.setDesnivel(Mi_ruta.getDesnivel());
+        r.setDetalleImagen(Mi_ruta.getDetalleImagen());
+        r.setResumen(Mi_ruta.getResumen());
+        r.setNombre(Mi_ruta.getNombre());
+        r.setDificultad(Mi_ruta.getDificultad());
+        r.setCoordenadas(Mi_ruta.getCoordenadas());
+        r.setDetalle(Mi_ruta.getDetalle());
+        r.setDescripcionTramo(Mi_ruta.getDescripcionTramo());
+        r.setDistanciaTramo(Mi_ruta.getDistanciaTramo());
+        r.setFolleto(Mi_ruta.getFolletos());
+        r.setFolletos(Mi_ruta.getFolletos());
+        r.setGeolocalizacion(Mi_ruta.getGeolocalizacion());
+        r.setInformacion(Mi_ruta.getInformacion());
+        r.setItinerario(Mi_ruta.getItinerario());
+        r.setTramos(Mi_ruta.getTramos());
+        r.setInformacionTexto(Mi_ruta.getInformacionTexto());
+        r.setObservaciones(Mi_ruta.getObservaciones());
+        r.setOrigenDestino(Mi_ruta.getOrigenDestino());
+        r.setPuntoDePartida(Mi_ruta.getPuntoDePartida());
+        r.setTrazadoRuta(Mi_ruta.getTrazadoRuta());
+        r.setTiempoAscension(Mi_ruta.getTiempoAscension());
+        r.setTiempoBTT(Mi_ruta.getTiempoBTT());
+        r.setTiempoCoche(Mi_ruta.getTiempoCoche());
+        r.setPuntoDePartida(Mi_ruta.getPuntoDePartida());
+        r.setTiempoViasVerdes(Mi_ruta.getTiempoViasVerdes());
+
+
     }
 }

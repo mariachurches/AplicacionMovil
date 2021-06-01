@@ -95,7 +95,7 @@ public class MapaFragment  extends Fragment {
                             if (coor[0] != "" && coor[1] != "") {
                                 try {
                                     LatLng rut = new LatLng(Double.parseDouble(coor[0]), Double.parseDouble(coor[1]));
-                                    googleMap.addMarker(new MarkerOptions().position(rut).title(rutaItem.getNombre()).snippet(rutaItem.getDificultad().toString()));
+                                    googleMap.addMarker(new MarkerOptions().position(rut).title(rutaItem.getNombre()).snippet(rutaItem.getConcejos()));
                                 } catch (NumberFormatException e) {
                                     Log.d("MAPAFRAGMENT", "JSON con algunos campos mal");
                                 }
@@ -120,7 +120,7 @@ public class MapaFragment  extends Fragment {
                 googleMap = mMap;
                 if(!marcados)
                 {
-                    viewModel.updateRutasAsturias();
+                    viewModel.updateRutasAsturias(false);
                 }
             }
         });

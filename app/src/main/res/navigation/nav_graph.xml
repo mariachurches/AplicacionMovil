@@ -25,6 +25,12 @@
         <action
             android:id="@+id/action_lista3_to_detailFragment"
             app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_lista3_to_findFragment"
+            app:destination="@id/findFragment" />
+        <action
+            android:id="@+id/action_lista3_to_filterFragment"
+            app:destination="@id/filterFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
@@ -36,4 +42,22 @@
         android:name="com.example.rutasasturias.MapaFragment"
         android:label="fragment_mapa"
         tools:layout="@layout/fragment_mapa" />
+    <fragment
+        android:id="@+id/findFragment"
+        android:name="com.example.rutasasturias.FindFragment"
+        android:label="fragment_find"
+        tools:layout="@layout/fragment_find" >
+        <action
+            android:id="@+id/action_findFragment_to_lista3"
+            app:destination="@id/lista3" />
+    </fragment>
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="com.example.rutasasturias.FilterFragment"
+        android:label="fragment_filter"
+        tools:layout="@layout/fragment_filter" >
+        <action
+            android:id="@+id/action_filterFragment_to_lista3"
+            app:destination="@id/lista3" />
+    </fragment>
 </navigation>

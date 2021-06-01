@@ -258,14 +258,14 @@
             <LinearLayout
                 android:id="@+id/itn"
                 android:layout_width="fill_parent"
-                android:layout_height="60dp"
+                android:layout_height="65dp"
                 android:baselineAligned="true"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textView11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="60dp"
+                    android:layout_width="115dp"
+                    android:layout_height="65dp"
                     android:layout_gravity="center"
                     android:layout_weight="3"
                     android:background=" #F4F1F1"
@@ -315,14 +315,14 @@
             <LinearLayout
                 android:id="@+id/contexto"
                 android:layout_width="fill_parent"
-                android:layout_height="68dp"
+                android:layout_height="80dp"
                 android:baselineAligned="true"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textView24"
                     android:layout_width="wrap_content"
-                    android:layout_height="68dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
                     android:layout_weight="4"
                     android:text="@string/Comentario"
@@ -353,6 +353,7 @@
                     android:layout_height="41dp"
                     android:layout_gravity="center"
                     android:layout_weight="4"
+                    android:background="#7B5295"
                     android:text="@string/OrigenDest"
                     android:textStyle="bold" />
 
@@ -362,6 +363,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="9"
+                    android:background="#7B5295"
                     android:text="" />
 
             </LinearLayout>
@@ -399,7 +401,7 @@
             <LinearLayout
                 android:id="@+id/rsm"
                 android:layout_width="fill_parent"
-                android:layout_height="56dp"
+                android:layout_height="wrap_content"
                 android:baselineAligned="true"
                 android:orientation="horizontal">
 
@@ -409,6 +411,7 @@
                     android:layout_height="56dp"
                     android:layout_gravity="center"
                     android:layout_weight="3"
+                    android:background="#7B5295"
                     android:fontFamily="serif"
                     android:text="@string/Resumen"
                     android:textStyle="bold" />
@@ -419,6 +422,7 @@
                     android:layout_height="53dp"
                     android:layout_gravity="center"
                     android:layout_weight="9"
+                    android:background="#7B5295"
                     android:fontFamily="serif"
                     android:text=""
                     app:autoSizeTextType="uniform" />
